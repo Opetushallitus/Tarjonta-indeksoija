@@ -39,6 +39,7 @@
                                    :pohjakoulutusvaatimusKoodiUrit
                                    :pohjakoulutusvaatimusTarkenne
                                    :aloituspaikat
+                                   :hakukohteenLinja
                                    :jarjestyspaikkaOid
                                    :organisaatioOid])
         (merge (determine-correct-aikataulu-and-hakulomake ht-haku ht-hakukohde))
