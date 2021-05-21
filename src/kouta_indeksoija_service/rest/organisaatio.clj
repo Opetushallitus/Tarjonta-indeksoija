@@ -59,10 +59,8 @@
 (defn find-last-changes
   [last-modified]
   (let [date-string (long->date-time-string last-modified)]
-    (let [res (->> (get->json-body (resolve-url :organisaatio-service.v2.muutetut.oid) {:lastModifiedSince date-string})
-                   (:oids)
-                   (remove clojure.string/blank?)
-                   (vec))]
+    (let [res (->> (get->json-body (resolve-url :organisaatio-service.v4.muutetut) {:lastModifiedSince date-string})
+                   (map :oid))]
       (when (seq res)
         (log/info "Found " (count res) " changes since " date-string " from organisaatiopalvelu"))
       res)))

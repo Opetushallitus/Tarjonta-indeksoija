@@ -12,8 +12,5 @@
     (testing "get last modified"
       (with-redefs [client/get mock-last-modified]
         (let [res      (organisaatio-client/find-last-changes (System/currentTimeMillis))
-              expected ["1.2.246.562.10.129178838410"
-                        "1.2.246.562.10.97852531538"
-                        "1.2.246.562.10.336097503610"
-                        "1.2.246.562.28.12771401465"]]
+              expected (seq ["1.2.246.562.10.83431223615" "1.2.246.562.10.86077555174" "1.2.246.562.10.919116475010" "1.2.246.562.10.50880626531"])]
           (is (= expected res)))))))
