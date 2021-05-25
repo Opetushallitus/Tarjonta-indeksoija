@@ -115,9 +115,14 @@
 
 (def kouta-search-mappings
   {:properties {:hits {:type "nested",
-                       :properties {:hakuajat {:type "nested"
-                                               :properties {:alkaa   {:type "date" }
-                                                            :paattyy {:type "date" }}}}}}
+                       :properties {:hakutiedot {:type "nested"
+                                                 :properties {:hakutapa {:type "keyword"}
+                                                              :yhteishakuOid {:type "keyword"}
+                                                              :pohjakoulutusvaatimukset {:type "keyword"}
+                                                              :valintatavat {:type "keyword"}
+                                                              :hakuajat {:type "nested"
+                                                                         :properties {:alkaa   {:type "date" }
+                                                                                      :paattyy {:type "date" }}}}}}}}
    :dynamic_templates [{:nested {:match "hits"
                                  :match_mapping_type "object"
                                  :mapping { :type "nested" }}}

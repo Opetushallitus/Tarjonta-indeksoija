@@ -21,11 +21,7 @@
              oppilaitos
              koulutusalaUrit
              nimet
-             hakuajat
-             hakutapaUrit
-             yhteishakuOidit
-             valintatapaUrit
-             pohjakoulutusvaatimusUrit
+             hakutiedot
              asiasanat
              ammattinimikkeet
              tutkintonimikeUrit
@@ -45,11 +41,7 @@
            oppilaitos []
            koulutusalaUrit []
            nimet []
-           hakuajat []
-           hakutapaUrit []
-           yhteishakuOidit []
-           valintatapaUrit []
-           pohjakoulutusvaatimusUrit []
+           hakutiedot []
            asiasanat []
            ammattinimikkeet []
            tutkintonimikeUrit []
@@ -78,11 +70,11 @@
              :koulutustyypit (clean-uris koulutustyypit)
              :opetuskielet (clean-uris opetuskieliUrit)
              :sijainti (clean-uris (concat kunnat maakunnat))
-             :hakuajat hakuajat
-             :hakutavat (clean-uris hakutapaUrit)
-             :yhteishaut yhteishakuOidit
-             :valintatavat (clean-uris valintatapaUrit)
-             :pohjakoulutusvaatimukset (clean-uris pohjakoulutusvaatimusUrit)
+             :hakutiedot (map #(-> %
+                                   (update :hakutapa remove-uri-version)
+                                   (update :valintatavat clean-uris)
+                                   (update :pohjakoulutusvaatimukset clean-uris))
+                              hakutiedot)
              :koulutusalat (clean-uris koulutusalaUrit)
              :opetustavat (clean-uris opetustapaUrit)
              :terms {:fi (terms :fi)
@@ -214,27 +206,6 @@
   (when-let [oppilaitostyyppi (:oppilaitostyyppi organisaatio)]
     (oppilaitostyyppi-uri-to-tyyppi oppilaitostyyppi)))
 
-(defn hakutapa-koodi-urit
-  [hakutieto]
-  (->distinct-vec (->> hakutieto
-                       :haut
-                       (map :hakutapaKoodiUri))))
-
-(defn yhteishaut
-  [hakutieto]
-  (->distinct-vec (->> hakutieto
-                       :haut
-                       (filter #(= koodisto/koodiuri-yhteishaku-hakutapa (remove-uri-version (:hakutapaKoodiUri %))))
-                       (map :hakuOid))))
-
-(defn valintatapa-koodi-urit
-  [hakutieto]
-  (->distinct-vec
-   (flatten
-    (->> hakutieto
-         :haut
-         (map #(->> % :hakukohteet (map :valintatapaKoodiUrit)))))))
-
 (defn- has-alakoodi
   [koodi alakoodit]
   (some #(= (:koodiUri %) (:koodi (extract-versio koodi)))
@@ -255,19 +226,11 @@
        (map :koodiUri)
        (->distinct-vec)))
 
-(defn- get-pohjakoulutusvaatimus-koodi-urit-from-hakutieto
-  [hakutieto]
-  (->> hakutieto
-       :haut
-       (map #(->> % :hakukohteet (map :pohjakoulutusvaatimusKoodiUrit)))
-       (flatten)
-       (->distinct-vec)))
-
 ; NOTE: kouta - konfo pohjakoulutuskoodit ovat suhteessa * : * joten jokaista koutakoodia vastaa taulukko konfokoodeja
 (defn pohjakoulutusvaatimus-koodi-urit
-  [hakutieto]
-  (->> hakutieto
-       (get-pohjakoulutusvaatimus-koodi-urit-from-hakutieto)
+  [hakukohde]
+  (->> hakukohde
+       (:pohjakoulutusvaatimusKoodiUrit)
        (map-to-konfo-koodit)))
 
 (defn- tutkintotyyppi->koulutustyyppi

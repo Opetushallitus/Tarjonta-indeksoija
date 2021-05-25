@@ -3,8 +3,8 @@
             [kouta-indeksoija-service.indexer.cache.hierarkia :as cache]
             [kouta-indeksoija-service.indexer.tools.organisaatio :as organisaatio-tool]
             [kouta-indeksoija-service.indexer.tools.general :refer [asiasana->lng-value-map amm-tutkinnon-osa? amm-osaamisala? julkaistu?]]
+            [kouta-indeksoija-service.indexer.tools.hakutieto :refer [get-search-hakutiedot]]
             [kouta-indeksoija-service.indexer.tools.search :as search-tool]
-            [kouta-indeksoija-service.indexer.tools.hakuaika :refer [->real-hakuajat]]
             [kouta-indeksoija-service.indexer.indexable :as indexable]
             [kouta-indeksoija-service.indexer.kouta.common :as common]
             [kouta-indeksoija-service.indexer.kouta.oppilaitos :as oppilaitos]
@@ -62,11 +62,7 @@
                               :tutkintonimikeUrit        (search-tool/tutkintonimike-koodi-urit koulutus)
                               :opetustapaUrit            (or (some-> toteutus :metadata :opetus :opetustapaKoodiUrit) [])
                               :nimet                     (vector (:nimi koulutus) (:nimi toteutus))
-                              :hakuajat                  (->real-hakuajat hakutieto)
-                              :hakutapaUrit              (search-tool/hakutapa-koodi-urit hakutieto)
-                              :yhteishakuOidit           (search-tool/yhteishaut hakutieto)
-                              :valintatapaUrit           (search-tool/valintatapa-koodi-urit hakutieto)
-                              :pohjakoulutusvaatimusUrit (search-tool/pohjakoulutusvaatimus-koodi-urit hakutieto)
+                              :hakutiedot                (get-search-hakutiedot hakutieto)
                               :kuva                      (:logo oppilaitos)
                               :asiasanat                 (asiasana->lng-value-map (get-in toteutus [:metadata :asiasanat]))
                               :ammattinimikkeet          (asiasana->lng-value-map (get-in toteutus [:metadata :ammattinimikkeet]))

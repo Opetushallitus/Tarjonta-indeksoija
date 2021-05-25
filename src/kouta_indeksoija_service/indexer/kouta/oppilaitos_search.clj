@@ -3,7 +3,7 @@
             [kouta-indeksoija-service.rest.kouta :as kouta-backend]
             [kouta-indeksoija-service.rest.koodisto :refer [get-koodi-nimi-with-cache list-alakoodi-nimet-with-cache]]
             [kouta-indeksoija-service.indexer.cache.hierarkia :as cache]
-            [kouta-indeksoija-service.indexer.tools.hakuaika :refer [->real-hakuajat]]
+            [kouta-indeksoija-service.indexer.tools.hakutieto :refer [get-search-hakutiedot]]
             [kouta-indeksoija-service.indexer.tools.organisaatio :as organisaatio-tool]
             [kouta-indeksoija-service.util.tools :refer [->distinct-vec]]
             [kouta-indeksoija-service.indexer.indexable :as indexable]
@@ -78,10 +78,7 @@
                      :koulutusOid               (:oid koulutus)
                      :toteutusOid               (:oid toteutus)
                      :nimi                      (:nimi toteutus)
-                     :hakuajat                  (->real-hakuajat hakutieto)
-                     :yhteishakuOidit           (search-tool/yhteishaut hakutieto)
-                     :hakutapaUrit              (search-tool/hakutapa-koodi-urit hakutieto)
-                     :valintatapaUrit           (search-tool/valintatapa-koodi-urit hakutieto)
+                     :hakutiedot                (get-search-hakutiedot hakutieto)
                      :pohjakoulutusvaatimusUrit (search-tool/pohjakoulutusvaatimus-koodi-urit hakutieto)
                      :kuva                      (:teemakuva toteutus)
                      :onkoTuleva                false
