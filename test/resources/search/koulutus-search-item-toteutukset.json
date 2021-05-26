@@ -139,7 +139,10 @@
       "hakutiedot": [
         {
           "hakuajat": [
-            { "alkaa": "2021-05-26T09:49", "paattyy": "2021-05-26T09:58" }
+            {
+              "alkaa": "!!startTime1",
+              "paattyy": "!!endTime1"
+            }
           ],
           "hakutapa": "hakutapa_03",
           "yhteishakuOid": null,
@@ -254,7 +257,10 @@
       "hakutiedot": [
         {
           "hakuajat": [
-            { "alkaa": "2021-05-26T09:49", "paattyy": "2021-05-26T09:58" }
+            {
+              "alkaa": "!!startTime1",
+              "paattyy": "!!endTime1"
+            }
           ],
           "hakutapa": "hakutapa_01",
           "yhteishakuOid": "1.2.246.562.29.00000000000000000002",
@@ -268,7 +274,10 @@
         },
         {
           "hakuajat": [
-            { "alkaa": "2021-05-26T09:49", "paattyy": "2021-05-26T09:58" }
+            {
+              "alkaa": "!!startTime1",
+              "paattyy": "!!endTime1"
+            }
           ],
           "hakutapa": "hakutapa_03",
           "yhteishakuOid": null,
