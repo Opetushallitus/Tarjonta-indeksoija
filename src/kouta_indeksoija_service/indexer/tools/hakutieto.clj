@@ -10,7 +10,7 @@
 (defn- get-hakukohde-hakutieto
   [hakukohde haku]
   (-> {}
-      (assoc :hakuajat (:hakuajat (if kaytetaanHaunAikatauluaHakukohteessa? haku hakukohde)))
+      (assoc :hakuajat (:hakuajat (if (kaytetaanHaunAikatauluaHakukohteessa? hakukohde) haku hakukohde)))
       (assoc :hakutapa (:hakutapaKoodiUri haku))
       (assoc :yhteishakuOid (when (= koodiuri-yhteishaku-hakutapa (remove-uri-version (:hakutapaKoodiUri haku))) (:hakuOid haku)))
       (assoc :pohjakoulutusvaatimukset (pohjakoulutusvaatimus-koodi-urit hakukohde))
