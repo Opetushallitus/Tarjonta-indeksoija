@@ -1,5 +1,8 @@
 {
-  "kuvaus": { "fi": "Kiva kuvaus fi", "sv": "Kiva kuvaus sv" },
+  "kuvaus": {
+    "fi": "Kiva kuvaus fi",
+    "sv": "Kiva kuvaus sv"
+  },
   "teemakuva": "https://testi.fi/koulutus-teemakuva/oid/kuva.jpg",
   "koulutukset": [
     {
@@ -27,8 +30,15 @@
   },
   "hits": [
     {
-      "sijainti": ["kunta_091", "maakunta_01"],
-      "koulutustyypit": ["koulutustyyppi_01", "koulutustyyppi_02", "amm"],
+      "sijainti": [
+        "kunta_091",
+        "maakunta_01"
+      ],
+      "koulutustyypit": [
+        "koulutustyyppi_01",
+        "koulutustyyppi_02",
+        "amm"
+      ],
       "terms": {
         "fi": [
           "Hevosalan perustutkinto 0 fi",
@@ -60,7 +70,10 @@
           "tutkintonimikkeet_01 nimi sv",
           "tutkintonimikkeet_02 nimi sv"
         ],
-        "en": ["horses", "horse"]
+        "en": [
+          "horses",
+          "horse"
+        ]
       },
       "opetuskielet": [
         "oppilaitoksenopetuskieli_1",
@@ -78,7 +91,9 @@
         "kansallinenkoulutusluokitus2016koulutusalataso2_02"
       ],
       "kuva": "https://testi.fi/oppilaitos-logo/oid/logo.png",
-      "opetustavat": ["opetuspaikkakk_1"],
+      "opetustavat": [
+        "opetuspaikkakk_1"
+      ],
       "onkoTuleva": false,
       "oppilaitosOid": "1.2.246.562.10.77777777799",
       "metadata": {
@@ -114,7 +129,10 @@
         "kunnat": [
           {
             "koodiUri": "kunta_091",
-            "nimi": { "fi": "kunta_091 nimi fi", "sv": "kunta_091 nimi sv" }
+            "nimi": {
+              "fi": "kunta_091 nimi fi",
+              "sv": "kunta_091 nimi sv"
+            }
           }
         ]
       },
@@ -125,15 +143,30 @@
           ],
           "hakutapa": "hakutapa_03",
           "yhteishakuOid": null,
-          "pohjakoulutusvaatimukset": ["pohjakoulutusvaatimuskonfo_am"],
-          "valintatavat": ["valintatapajono_av", "valintatapajono_tv"]
+          "pohjakoulutusvaatimukset": [
+            "pohjakoulutusvaatimuskonfo_am"
+          ],
+          "valintatavat": [
+            "valintatapajono_av",
+            "valintatapajono_tv"
+          ]
         }
       ],
-      "toteutusNimi": { "fi": "Hevostoteutus 1 fi", "sv": "Hevostoteutus 1 sv" }
+      "toteutusNimi": {
+        "fi": "Hevostoteutus 1 fi",
+        "sv": "Hevostoteutus 1 sv"
+      }
     },
     {
-      "sijainti": ["kunta_091", "maakunta_01"],
-      "koulutustyypit": ["koulutustyyppi_01", "koulutustyyppi_02", "amm"],
+      "sijainti": [
+        "kunta_091",
+        "maakunta_01"
+      ],
+      "koulutustyypit": [
+        "koulutustyyppi_01",
+        "koulutustyyppi_02",
+        "amm"
+      ],
       "terms": {
         "fi": [
           "Hevosalan perustutkinto 0 fi",
@@ -157,7 +190,9 @@
         ],
         "en": []
       },
-      "opetuskielet": ["oppilaitoksenopetuskieli_1"],
+      "opetuskielet": [
+        "oppilaitoksenopetuskieli_1"
+      ],
       "toteutusOid": "1.2.246.562.17.00000000000000000098",
       "nimi": {
         "fi": "Oppilaitos fi 1.2.246.562.10.77777777799",
@@ -170,7 +205,10 @@
         "kansallinenkoulutusluokitus2016koulutusalataso2_02"
       ],
       "kuva": "https://testi.fi/oppilaitos-logo/oid/logo.png",
-      "opetustavat": ["opetuspaikkakk_1", "opetuspaikkakk_2"],
+      "opetustavat": [
+        "opetuspaikkakk_1",
+        "opetuspaikkakk_2"
+      ],
       "onkoTuleva": false,
       "oppilaitosOid": "1.2.246.562.10.77777777799",
       "metadata": {
@@ -206,7 +244,10 @@
         "kunnat": [
           {
             "koodiUri": "kunta_091",
-            "nimi": { "fi": "kunta_091 nimi fi", "sv": "kunta_091 nimi sv" }
+            "nimi": {
+              "fi": "kunta_091 nimi fi",
+              "sv": "kunta_091 nimi sv"
+            }
           }
         ]
       },
@@ -217,8 +258,13 @@
           ],
           "hakutapa": "hakutapa_01",
           "yhteishakuOid": "1.2.246.562.29.00000000000000000002",
-          "pohjakoulutusvaatimukset": ["pohjakoulutusvaatimuskonfo_am"],
-          "valintatavat": ["valintatapajono_av", "valintatapajono_tv"]
+          "pohjakoulutusvaatimukset": [
+            "pohjakoulutusvaatimuskonfo_am"
+          ],
+          "valintatavat": [
+            "valintatapajono_av",
+            "valintatapajono_tv"
+          ]
         },
         {
           "hakuajat": [
@@ -226,11 +272,19 @@
           ],
           "hakutapa": "hakutapa_03",
           "yhteishakuOid": null,
-          "pohjakoulutusvaatimukset": ["pohjakoulutusvaatimuskonfo_am"],
-          "valintatavat": ["valintatapajono_av", "valintatapajono_tv"]
+          "pohjakoulutusvaatimukset": [
+            "pohjakoulutusvaatimuskonfo_am"
+          ],
+          "valintatavat": [
+            "valintatapajono_av",
+            "valintatapajono_tv"
+          ]
         }
       ],
-      "toteutusNimi": { "fi": "Hevostoteutus 2 fi", "sv": "Hevostoteutus 2 sv" }
+      "toteutusNimi": {
+        "fi": "Hevostoteutus 2 fi",
+        "sv": "Hevostoteutus 2 sv"
+      }
     }
   ],
   "nimi": {
@@ -238,7 +292,10 @@
     "sv": "Hevosalan perustutkinto 0 sv"
   },
   "oid": "1.2.246.562.13.00000000000000000098",
-  "kielivalinta": ["fi", "sv"],
+  "kielivalinta": [
+    "fi",
+    "sv"
+  ],
   "tutkintonimikkeet": [
     {
       "koodiUri": "tutkintonimikkeet_01",
