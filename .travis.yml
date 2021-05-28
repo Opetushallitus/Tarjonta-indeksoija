@@ -49,7 +49,7 @@ deploy:
     script: lein deploy
     skip_cleanup: true
     on:
-      branch: KTO-1060
+      branch: KTO-1167-build
   - provider: script
     script: ./ci-tools/build/upload-image.sh ${ARTIFACT_NAME}
     on:
