@@ -46,7 +46,7 @@
 
 (defn get-sorakuvaus
   [id]
-  (get-doc "sorakuvaus" id))
+  (if (some? id) (get-doc "sorakuvaus" id) nil))
 
 (defn get-oppilaitos
   [oid]
