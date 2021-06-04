@@ -38,10 +38,19 @@
   [osat]
   (concat (filter-osaamisalat osat) (mapcat #(get-osaamisalat-recursive (:osat %)) osat)))
 
+(defn set-default-muodostumissaanto
+  [osa default-muodostumissaanto]
+  (let [muodostumissaanto (or (:muodostumisSaanto osa) default-muodostumissaanto)]
+    (assoc osa
+           :muodostumisSaanto muodostumissaanto
+           :osat (map #(set-default-muodostumissaanto % muodostumissaanto)
+                      (:osat osa)))))
+
 (defn- get-osaamisalat
   [eperuste]
-  (let [osat (some-> eperuste :suoritustavat (first) :rakenne :osat)]
-    (vec (for [osaamisala (get-osaamisalat-recursive osat)
+  (let [osat (some-> eperuste :suoritustavat (first) :rakenne :osat)
+        osat-with-muodostumissaanto (map #(set-default-muodostumissaanto % nil) osat)]
+    (vec (for [osaamisala (get-osaamisalat-recursive osat-with-muodostumissaanto)
                :let [muodostumissaanto (:muodostumisSaanto osaamisala)]]
            (merge
             {:nimi (get-in osaamisala [:osaamisala :nimi])
